@@ -1,0 +1,83 @@
+.TH _PRINTF 3 "28 July 2019" "GNU" "Holberton Programmer's man page"
+.SH NAME
+.B _printf
+- formatted output conversion
+.SH SYNOPSIS
+.B #include """holberton.h""
+
+.B int _printf(const char \fI*format\fR, ...);
+.SH DESCRIPTION
+The function \fB_printf()\fR produce output according to a \fIformat\fR. I writes output to \fIstdout\fR, the standard output stream.
+
+The function produces the output under the control of a \fIformat\fR string that specifies how the succeding arguments (provided by the stdarg.h library) are converted for output.
+.SS Format of the format string
+The format string is a character string, it is composed of zero or more directives which include ordinary characters that are passed to output in its original state (excluding %), and conversion specifications which extract zero or more arguments. Each conversion specification begins with \fB%\fR character, and ends with a \fIconversion specifier\fR. In between those two some other options may be writen in this order \fIflags\fR, a minimum \fIfieldwidth\fR, \fIprecision\fR and a \fIlength modifier\fR.
+
+.SS Flag characters
+The character \fB%\fR is followed by zero or more of the following flags:
+
+.IP \fB#\fR
+The value should be converted to an ""alternate form"". For \fBo\fR conversions, the first character of the output string is changed to zero (by prefixing a 0 if it was not zero already). For \fIx\fR and \fIX\fR conversions, a nonzero result has the string ""0x"" or ""0X"" respectively prepended to it.
+
+.IP \fB0\fR
+The value should be zero padded. For \fBd, i, o, u, x, and X\fR conversions, the converted value is padded to the left by filling the blanks with zeros. If \fB0\fR is combined with \fB-\fR flag or a precision is given to a numeric conversion the \fB0\fR is ignored.
+
+.IP \fB-\fR
+The converted value is to be left justified on the field boundary. Padding the value to the right with blanks.
+
+.IP \fB'' \fR
+(a space) A blank should be left before a positive number or empty string produced by a singed conversion.
+
+.IP \fB+\fR
+For positive numbers the \fB+\fR sing is implicit and showed as a blank so it should be declared to be shown before a positive number. A plus sign overrides a space if both are used.
+.SS Field width
+An optional decimal digit string (with nonzero first digit) specifying a minimum field width. If the value converted width is less than the field width specified the space is padded with blanks on the left unless specified. If the width of the value converted is greater than the field width given, it will be expanded for the value to fit.
+.SS Precision
+An optional precision, in  the form of a period ('.') followed by an optional decimal digit string. As in field width the decimal digit string can be replaced by "*" or "*m$" (for some decimal int \fIm\fR) to specify that the precision will be passed in the next argument which must be of type \fIint\fR. If just a period is given it will be taken as zero, negative precisions will be omitted. This gives the minimum number of digits to appear for \fBd, i, o, u, x, and X\fR conversions and the maximum number of characters to be printed froma string for \fBs\fR and \fBS\fR conversions.
+.SS Length modifier
+Here, "integer conversion" stands for \fBd, i, o, u, x, or X conversion.
+
+.IP \fBh\fR
+A following integer conversion corresponds to a \fI short int\fR or \fIunsigned short int\fR argument, or a following \fBn\fR conversion corresponds toa pointer to a \fIshort int\fR argument.
+
+.IP \fBl\fR
+A following integer conversion corresponds to a \fIlong int\fR or \fI unsigned long int\fR argument, or a following \fBn\fR conversion to a pointer to a \fIlong int\fR argument, or a following \fBc\fR conversion to a \fIwint_t\fR arguemnt, or a following \fBs\fR conversion to a pointer to \fIwchar_t\fR argument.
+
+.SS Conversion specifiers
+A character that specifies the type of conversion to be applied.
+
+.IP \fBd,i\fR
+The \fIint\fR argument is converted to signed decimal notation. It is usually printed with a default precision of 1. In case the precision given is greater than the space needed it will be padded to the left and filled with zeros. In case both precision and argument are 0 the output is empty.
+
+.IP \fBo,u,x,X\fR
+The \fIunsigned int\ argument is converted to unsigned octal (\fBo\fR), unsigend decimal (\fBu\fR), or unsigned hexadecimal (\fBx\fR and \fBX\fR) notation. THe letters \fBabcdef\fR are used for \fBx\fR conversions while uppercase \fBABCDEF\fR are used for \fBX\fR conversions. Precision and zero conditions are same as the ones listed for \fBd\fR and \fBi\fR.
+
+.IP \fBb\fR
+The \fIunsigned int\fR argument is converted to unsigned binary.
+
+.IP \fBc\fR
+If no \fBl\fR modifier is present, the \fIint\fR argument is converted to an \fIunsigned char\fR, and the resulting character is written. Otherwise the \fIwint_t\fR argument is converted to a multibyte sequence by call to the wcrtomb(3) function which will begin with the original state and will result into a multibyte string.
+
+.IP \fBs\fR
+If no \fBl\fR medifier is present: the \fIconst char *\fR argument is expected to be a pointer to an array of characters. The string will be written up to the null character, if precision is specified it will print until the number specified and there is no need for the null byte, if precision is not specified or is greater then the size of the array the null byte is needed.
+
+If an \fBl\fR modifier is present: the \fIconst wchar_t *\fR argument is expected to be a pointer to an array of wide characters. In this case the precision will determine the number of bytes to be printed not the number of \fIwide characters\fR or \fIscreen positions\fR. Conditions (from previous paragraph) for precision and null byte apply.
+
+.IP \fBS\fR
+Don't use
+
+.IP \fBp\fR
+The \fIvoid *\fR pointer argument is printed in hexadecimal.
+
+.IP \fB%\fR
+To print a '%' use double '%%'. No argument is converted.
+
+.SH RETURN VALUE
+Upon successful return, the function returns the number of characters printed (excluding null byte for strings). If the function fails a negative values is returned.
+.SH BUGS
+No known bugs.
+.SH EXAMPLE
+.SH COLOPHON
+This page is part of the release 9.1 of the Holberton man-pages.
+.SH AUTHOR
+Javier Canon, Laura Peralta V
