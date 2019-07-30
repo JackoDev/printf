@@ -11,6 +11,12 @@ int to_binary(va_list valist)
 	unsigned int binum[32];
 	unsigned int n = va_arg(valist, unsigned int);
 
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	while (n > 0)
 	{
 		binum[count] = n % 2;
