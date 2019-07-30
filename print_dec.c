@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * p_d - prints decimals
+ * print_dec - prints decimals
  * @arg: arguments passed to
  * Return: number of numbers printed
  */

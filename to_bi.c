@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- *to_bi - convert decimal to binary
+ *to_binary- convert decimal to binary
  *@valist: unsigned int passed to function
  *Return: number of characters printed
  */

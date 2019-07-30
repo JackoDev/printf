@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- *print_rev - prints string in reverse
- *@s: reverse string
- *Return: number of chars printed
+ * print_rev - prints string in reverse
+ * @valist: valist
+ * Return: number of chars printed
  */
 int print_rev(va_list valist)
 {
