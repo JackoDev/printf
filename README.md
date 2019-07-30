@@ -13,7 +13,7 @@ This function was created to simulate most of the options and flags performed by
 | p     | converts void pointer in hexadecimal |
 
 ### Further information
-For further information please refer to [Man-page for this project](master/man_3_printf) 
+For further information please refer to [Man-page for this project](./man_3_printf) 
 
 ### Built with 
 * C programming language
