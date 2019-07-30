@@ -9,7 +9,9 @@ int _printf(const char *format, ...)
 {
 	unsigned int cont = 0, i = 0, j, cont2 = 0;
 	va_list valist;
-	selec sel[] = {{"c", p_c}, {"s", p_st}, {"d", p_d}, {"i", p_d}, {NULL, NULL}};
+	selec sel[] = {{"c", print_char}, {"s", print_str}, {"d", print_dec},
+		       {"i", print_dec}, {"b", to_binary}, {"r", print_rev},
+		       {"R", rot13}, {NULL, NULL}};
 
 	va_start(valist, format);
 	if (format == NULL || (_strlen(format) == 1 && *format == '%'))
@@ -25,26 +27,20 @@ int _printf(const char *format, ...)
 					cont = cont + sel[j].f(valist);
 					i++;
 					cont2 = 1;
-				}
-			}
+					break; } }
 			if (cont2 == 0)
 			{
 				_putchar(format[i]);
-				cont++;
-			}
-		}
+				cont++; } }
 		else if (format[i] == '%' && format[i + 1] == '%')
 		{
 			_putchar('%');
 			i++;
-			cont++;
-		}
+			cont++; }
 		else
 		{
 			_putchar(format[i]);
-			cont++;
-		}
-	}
+			cont++; } }
 	va_end(valist);
 	return (cont);
 }

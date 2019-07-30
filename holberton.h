@@ -14,9 +14,9 @@ void _atoi(char *s);
 char *rot13(char *str);
 void print_rev(char *s);
 
-int p_c(va_list);
-int p_st(va_list);
-int p_d(va_list);
+int print_char(va_list);
+int print_str(va_list);
+int print_dec(va_list);
 int to_binary(va_list);
 int print_unsigned_int(va_list);
 int print_unsigned_octal(va_list);

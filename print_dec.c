@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
- * p_d - prints decimals
+ * print_dec - prints decimals
  * @arg: arguments passed to
  * Return: number of numbers printed
  */
-int p_d(va_list arg)
+int print_dec(va_list arg)
 {
 	int n = va_arg(arg, int);
 	int num, last = n % 10, digit, num2 = 1, i = 1;
