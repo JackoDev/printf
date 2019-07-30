@@ -11,14 +11,13 @@ int _putchar(char);
 int _strlen(const char *s);
 void _puts(char *s);
 void _atoi(char *s);
-char *rot13(char *str);
-void print_rev(char *s);
+int print_rev(va_list);
 
-int p_c(va_list);
-int p_st(va_list);
-int p_d(va_list);
+int print_char(va_list);
+int print_str(va_list);
+int print_dec(va_list);
 int to_binary(va_list);
-int print_unsigned_int(va_list);
+int unsigned_int(va_list);
 int print_unsigned_octal(va_list);
 int print_hexa(va_list);
 int print_hexaupper(va_list);
@@ -26,7 +25,7 @@ int rem_japanese(va_list);
 int print_address(va_list);
 int print_long(va_list);
 int print_short(va_list);
-
+int rot13(va_list);
 
 /**
  *struct selector - selects the appropiate function
