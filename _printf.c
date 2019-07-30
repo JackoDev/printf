@@ -10,8 +10,8 @@ int _printf(const char *format, ...)
 	unsigned int cont = 0, i = 0, j, cont2 = 0;
 	va_list valist;
 	selec sel[] = {{"c", print_char}, {"s", print_str}, {"d", print_dec},
-		       {"i", print_dec}, {"b", to_binary}, {"r", print_rev},
-		       {"R", rot13}, {NULL, NULL}};
+			{"i", print_dec}, {"b", to_binary}, {"r", print_rev},
+		, {NULL, NULL}};
 
 	va_start(valist, format);
 	if (format == NULL || (_strlen(format) == 1 && *format == '%'))
