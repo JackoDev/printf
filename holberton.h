@@ -11,15 +11,15 @@ int _putchar(char);
 int _strlen(const char *s);
 void _puts(char *s);
 void _atoi(char *s);
-char *rot13(char *str);
+int print_rot13(va_list);
 int print_rev(va_list);
 
 int print_char(va_list);
 int print_str(va_list);
 int print_dec(va_list);
 int to_binary(va_list);
-int print_unsigned_int(va_list);
-int print_unsigned_octal(va_list);
+int print_unsig(va_list);
+int print_octal(va_list);
 int print_hexa(va_list);
 int print_hexaupper(va_list);
 int rem_japanese(va_list);
