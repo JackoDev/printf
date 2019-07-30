@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 	selec sel[] = {{"c", print_char}, {"s", print_str}, {"d", print_dec},
 			{"i", print_dec}, {"b", to_binary}, {"r", print_rev},
-		, {NULL, NULL}};
+			{NULL, NULL}};
 
 	va_start(valist, format);
 	if (format == NULL || (_strlen(format) == 1 && *format == '%'))

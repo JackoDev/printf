@@ -12,7 +12,7 @@ int _strlen(const char *s);
 void _puts(char *s);
 void _atoi(char *s);
 char *rot13(char *str);
-void print_rev(char *s);
+int print_rev(va_list);
 
 int print_char(va_list);
 int print_str(va_list);
