@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 {
 	unsigned int cont = 0, i = 0, j, cont2 = 0;
 	va_list valist;
-	selec sel[] = {{"c", print_char}, {"s", print_str}, {NULL, NULL}};
+	selec sel[] = {{"c", p_c}, {"s", p_st}, {"d", p_d}, {"i", p_d}, {NULL, NULL}};
 
 	va_start(valist, format);
 	if (format == NULL || (_strlen(format) == 1 && *format == '%'))
