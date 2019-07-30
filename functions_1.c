@@ -16,11 +16,11 @@ int _strlen(const char *s)
 	return (i);
 }
 /**
- * p_c - prints a character
+ * print_char - prints a character
  * @valist: format to print
  * Return: number of char printed
  */
-int p_c(va_list valist)
+int print_char(va_list valist)
 {
 	char s;
 
@@ -29,11 +29,11 @@ int p_c(va_list valist)
 	return (1);
 }
 /**
- * p_st - prints strings
+ * print_str - prints strings
  * @valist: format to print
  * Return: number of char printed
  */
-int p_st(va_list valist)
+int print_str(va_list valist)
 {
 	char *s;
 	int i = 0;
