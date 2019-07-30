@@ -20,7 +20,7 @@ int _strlen(const char *s)
  * @valist: format to print
  * Return: number of char printed
  */
-int p_c(va_list valist)
+int print_char(va_list valist)
 {
 	char s;
 
@@ -33,7 +33,7 @@ int p_c(va_list valist)
  * @valist: format to print
  * Return: number of char printed
  */
-int p_st(va_list valist)
+int print_str(va_list valist)
 {
 	char *s;
 	int i = 0;
