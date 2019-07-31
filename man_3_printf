@@ -50,6 +50,19 @@ Upon successful return, the function returns the number of characters printed (e
 .SH BUGS
 No known bugs.
 .SH EXAMPLE
+#include <stdio.h>
+
+void main(void)
+{
+int y = 3000;
+
+_printf("Hello Year \fB%d\fR!", y);
+return (0);
+}
+
+Output
+
+""Hello Year 3000!""
 
 .SH COLOPHON
 This page is part of the release 9.6 of the Holberton man-pages.
